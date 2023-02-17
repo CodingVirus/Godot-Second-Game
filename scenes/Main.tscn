@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GameCamera.tscn" type="PackedScene" id=3]
 
 [node name="Node" type="Node"]
 
@@ -13,5 +14,4 @@ tile_data = PoolIntArray( -131077, 1, 0, -131076, 1, 1, -131075, 1, 1, -131074, 
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
+[node name="GameCamera" parent="." instance=ExtResource( 3 )]
