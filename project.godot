@@ -80,6 +80,10 @@ jump={
  ]
 }
 
+[mono]
+
+project/assembly_name="StudyGame"
+
 [physics]
 
 common/enable_pause_aware_picking=true
