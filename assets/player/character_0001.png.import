@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character_0000.png-7d8a50fc0c68ca0c9d6df94210231934.stex"
+path="res://.import/character_0001.png-2a5b426d2663edb9564bfd87ae307807.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kenney_pixelplatformer/Characters/character_0000.png"
-dest_files=[ "res://.import/character_0000.png-7d8a50fc0c68ca0c9d6df94210231934.stex" ]
+source_file="res://assets/player/character_0001.png"
+dest_files=[ "res://.import/character_0001.png-2a5b426d2663edb9564bfd87ae307807.stex" ]
 
 [params]
 
