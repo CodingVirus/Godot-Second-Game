@@ -19,7 +19,7 @@ config/icon="res://icon.png"
 window/size/width=320
 window/size/height=180
 window/size/test_width=1920
-window/size/test_height=1080
+window/size/test_height=1920
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
