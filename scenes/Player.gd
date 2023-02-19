@@ -35,7 +35,7 @@ func process_normal(delta):
 	var moveVector = get_movement_vector()
 	velocity.x += moveVector.x * horizontalAcceleraton * delta
 	if (moveVector.x == 0):
-		velocity.x = lerp(0, velocity.x, pow(2, -5 * delta))
+		velocity.x = lerp(0, velocity.x, pow(2, -50 * delta))
 		
 	velocity.x = clamp(velocity.x, -maxHorizontalSpeed, maxHorizontalSpeed)
 	
@@ -66,12 +66,19 @@ func process_normal(delta):
 
 func process_dash(delta):
 	if (isStateNew):
-		velocity = Vector2(maxDashSpeed, 0)
+		$AnimatedSprite.play("jump")
+		var moveVector = get_movement_vector()
+		var velocityMod = 1
+		if (moveVector.x != 0):
+			velocityMod = sign(moveVector.x)
+		else:
+			velocityMod = 1 if $AnimatedSprite.flip_h else -1
+		velocity = Vector2(maxDashSpeed * velocityMod, 0)
 		
 	velocity = move_and_slide(velocity, Vector2.UP)
-	velocity.x = lerp(0, velocity.x, pow(2, -20 * delta))
+	velocity.x = lerp(0, velocity.x, pow(2, -8 * delta))
 	
-	if (velocity.x < minDashSpeed):
+	if (abs(velocity.x) < minDashSpeed):
 		call_deferred("change_state", State.NORMAL)
 	
 func get_movement_vector():
