@@ -32,6 +32,8 @@ func change_state(newState):
 	isStateNew = true
 
 func process_normal(delta):
+	if (isStateNew):
+		$DashArea/CollisionShape2D.disabled = true
 	var moveVector = get_movement_vector()
 	velocity.x += moveVector.x * horizontalAcceleraton * delta
 	if (moveVector.x == 0):
@@ -66,6 +68,7 @@ func process_normal(delta):
 
 func process_dash(delta):
 	if (isStateNew):
+		$DashArea/CollisionShape2D.disabled = false
 		$AnimatedSprite.play("jump")
 		var moveVector = get_movement_vector()
 		var velocityMod = 1
